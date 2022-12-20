@@ -1,0 +1,22 @@
+<h1>Add printer</h1>
+
+<form action="getpc/" method="post">
+{% csrf_token %}
+model:<br>
+<input name="model">
+<br><br>
+speed:<br>
+<input name="spedd">
+<br><br>
+
+    ram:<br>
+<input name="ram">
+    <br><br>
+hd:<br>
+<input name="hd">
+    <br><br>
+    price:<br>
+<input name="price">
+
+<input type="submit" value="Submit">
+</form>

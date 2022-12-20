@@ -1,0 +1,20 @@
+<h1>Add printer</h1>
+
+<form action="getprinter/" method="post">
+{% csrf_token %}
+model:<br>
+<input name="model">
+<br><br>
+color:<br>
+<input name="color">
+<br><br>
+
+    type:<br>
+<input name="type">
+    <br><br>
+
+    price:<br>
+<input name="price">
+
+<input type="submit" value="Submit">
+</form>

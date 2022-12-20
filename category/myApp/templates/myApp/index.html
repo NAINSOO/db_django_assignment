@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Categories Database:</title>
+</head>
+<body>
+<h2>query button</h2>
+<form action="query1" method="GET">
+    <button type="submit">query1</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>average</th>
+        </tr>
+    </thead>
+{% for category in query1 %}
+    <tr>
+        <td>{{ category.average }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+<form action="query2" method="GET">
+    <button type="submit">query2</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>maker</th>
+            <th>AVG(speed)</th>
+        </tr>
+    </thead>
+{% for category in query2 %}
+    <tr>
+        <td>{{ category.maker }}</td>
+        <td>{{ category.average }}</td>
+    </tr>
+{% endfor %}
+</table>
+<form action="query3" method="GET">
+    <button type="submit">query3</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>maker</th>
+            <th>model</th>
+            <th>price</th>
+        </tr>
+    </thead>
+{% for category in query3 %}
+    <tr>
+        <td>{{ category.maker }}</td>
+        <td>{{ category.model }}</td>
+        <td>{{ category.price }}</td>
+    </tr>
+{% endfor %}
+</table>
+<form action="query4" method="GET">
+    <button type="submit">query4</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>maker</th>
+            <th>model</th>
+            <th>MAX(price)</th>
+        </tr>
+    </thead>
+{% for category in query4 %}
+    <tr>
+        <td>{{ category.maker }}</td>
+        <td>{{ category.model }}</td>
+        <td>{{ category.price }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+<h2>product table</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>maker</th>
+            <th>model</th>
+            <th>type</th>
+        </tr>
+    </thead>
+{% for category in product %}
+    <tr>
+        <td>{{ category.maker }}</td>
+        <td>{{ category.model }}</td>
+        <td>{{ category.type }}</td>
+        <td><a href="deleteProduct/{{ category.model }}">delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+<p>
+<a href="addproduct/">Add product</a>
+</p>
+
+<h2>printer table</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>model</th>
+            <th>color</th>
+            <th>type</th>
+            <th>price</th>
+
+        </tr>
+    </thead>
+{% for category in printer %}
+    <tr>
+        <td>{{ category.model }}</td>
+        <td>{{ category.color }}</td>
+        <td>{{ category.type }}</td>
+        <td>{{ category.price }}</td>
+        <td><a href="deletePrinter/{{ category.model }}">delete</a></td>
+
+    </tr>
+{% endfor %}
+</table>
+<p>
+<a href="addprinter/">Add printer</a>
+</p>
+
+<h2>Laptop table</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>model</th>
+            <th>speed</th>
+            <th>RAM</th>
+            <th>HDD</th>
+            <th>price</th>
+            <th>laptop</th>
+
+        </tr>
+    </thead>
+{% for category in laptop %}
+    <tr>
+        <td>{{ category.model }}</td>
+        <td>{{ category.speed }}</td>
+        <td>{{ category.ram }}</td>
+        <td>{{ category.hd }}</td>
+        <td>{{ category.price }}</td>
+        <td>{{ category.screen }}</td>
+        <td><a href="deleteLaptop/{{ category.model }}">delete</a></td>
+
+    </tr>
+{% endfor %}
+</table>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ laptopForm }}
+    <button type="submit">Send</button>
+</form>
+<h2>PC table</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>model</th>
+            <th>speed</th>
+            <th>RAM</th>
+            <th>HDD</th>
+            <th>price</th>
+        </tr>
+    </thead>
+{% for category in pc %}
+    <tr>
+        <td>{{ category.model }}</td>
+        <td>{{ category.speed }}</td>
+        <td>{{ category.ram }}</td>
+        <td>{{ category.hd }}</td>
+        <td>{{ category.price }}</td>
+        <td><a href="deletePc/{{ category.model }}">delete</a></td>
+    </tr>
+{% endfor %}
+</table>
+<p>
+<a href="addpc/">Add PC</a>
+</p>
+</body>
+</html>
