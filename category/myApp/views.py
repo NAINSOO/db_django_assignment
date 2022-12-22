@@ -186,6 +186,45 @@ def query4(request):
             output4.append(eachRow)
     return HttpResponseRedirect(reverse('index'))
 
+def create1(request):
+    if request.method == "GET":
+        with connection.cursor() as cursor:
+            sqlQuery = "CREATE TABLE product (make CHAR,model INT,type VARCHAR(20));"
+            cursor.execute(sqlQuery)
+            fetchResult = cursor.fetchall()
+        connection.commit()
+        connection.close()
+    return HttpResponseRedirect(reverse('index'))
+
+def create2(request):
+    if request.method == "GET":
+        with connection.cursor() as cursor:
+            sqlQuery = "CREATE TABLE pc (model INT ,speed FLOAT, ram INT ,hd INT ,price INT);"
+            cursor.execute(sqlQuery)
+            fetchResult = cursor.fetchall()
+        connection.commit()
+        connection.close()
+    return HttpResponseRedirect(reverse('index'))
+
+def create3(request):
+    if request.method == "GET":
+        with connection.cursor() as cursor:
+            sqlQuery = "CREATE TABLE laptop (model INT,speed FLOAT, ram INT, hd INT, screen FLOAT, price INT);"
+            cursor.execute(sqlQuery)
+            fetchResult = cursor.fetchall()
+        connection.commit()
+        connection.close()
+    return HttpResponseRedirect(reverse('index'))
+
+def create4(request):
+    if request.method == "GET":
+        with connection.cursor() as cursor:
+            sqlQuery = "CREATE TABLE printer (model INT, color BOOL, type VARCHAR(20), price INT);"
+            cursor.execute(sqlQuery)
+            fetchResult = cursor.fetchall()
+        connection.commit()
+        connection.close()
+    return HttpResponseRedirect(reverse('index'))
 
 
 def inputData(request):

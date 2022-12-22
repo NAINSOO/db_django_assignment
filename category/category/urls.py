@@ -33,4 +33,9 @@ urlpatterns = [
     path('addprinter/getprinter/', views.getPrinter, name='printer'),
     path('addpc/', views.addPC, name='pc'),
     path('addpc/getpc/', views.getPC, name='pc'),
+    path('createproduct', views.create1, name='create'),
+    path('createpc', views.create2, name='create'),
+    path('createlaptop', views.create3, name='create'),
+    path('createprinter', views.create4, name='create'),
+
 ]
